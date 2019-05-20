@@ -399,13 +399,21 @@ public class SudokuController implements Initializable {
 
 							// This is the code that is actually taking the cell value from the drag-from
 							// cell and dropping a new Image into the dragged-to cell
+							if (game.getShowHints() == true && s.isValidValue(CellTo.getiRow(), CellTo.getiCol(), CellFrom.getiCellValue())) {
 							ImageView iv = new ImageView(GetImage(CellFrom.getiCellValue()));
 							paneTarget.getCell().setiCellValue(CellFrom.getiCellValue());
 							paneTarget.getChildren().clear();
 							paneTarget.getChildren().add(iv);
 							System.out.println(CellFrom.getiCellValue());
-							
-							
+							}
+
+							else if(game.getShowHints() == false){
+								ImageView iv = new ImageView(GetImage(CellFrom.getiCellValue()));
+								paneTarget.getCell().setiCellValue(CellFrom.getiCellValue());
+								paneTarget.getChildren().clear();
+								paneTarget.getChildren().add(iv);
+								System.out.println(CellFrom.getiCellValue());	
+							}			
 							
 							game.getSudoku().getPuzzle()[CellFrom.getiRow()][CellFrom.getiCol()] = CellFrom.getiCellValue();
 							

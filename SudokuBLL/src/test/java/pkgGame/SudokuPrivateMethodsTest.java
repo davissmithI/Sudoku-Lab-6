@@ -15,9 +15,9 @@ public class SudokuPrivateMethodsTest {
 		for (int i = 0; i < 50; i++)
 			System.out.print("*");
 		System.out.println();
-	}
+		}
 
-	@Test
+/*	@Test
 	public void Sudoku_Test_SetRegion() {
 
 		Sudoku s1 = null;
@@ -123,5 +123,5 @@ public class SudokuPrivateMethodsTest {
 			fail("InvocationTargetException, Invalid size");
 		}
 
-	}
+	}*/
 }
